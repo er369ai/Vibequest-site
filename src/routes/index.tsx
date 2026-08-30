@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImage from "@/assets/hero-quest.jpg";
+import radarQuestImage from "@/assets/radar-quest.png";
 import { SiteShell, TOPICS } from "@/components/vq/SiteShell";
 import {
   Zap,
@@ -137,9 +138,9 @@ function Landing() {
 
             <div className="relative overflow-hidden rounded-3xl border border-cyan-500/30 bg-slate-900 p-6 shadow-glow-cyan lg:col-span-6">
               <img
-                src={heroImage}
-                alt="Vibe Quest adventurers"
-                className="w-full rounded-2xl object-cover opacity-80"
+                src={radarQuestImage}
+                alt="Vibe Quest group gathering in Cyprus during golden hour"
+                className="w-full rounded-2xl object-cover opacity-90"
                 width={1200}
                 height={800}
               />
