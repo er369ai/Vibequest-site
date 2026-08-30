@@ -24,12 +24,6 @@ config is needed.
 
 ## Notes
 
-- `vercel.json` sets `framework: null` so Vercel deploys the Nitro-generated
-  `.vercel/output` directory instead of applying its own framework preset.
-- The Lovable preview/publish path is unaffected — the Lovable build sandbox
-  always targets Cloudflare, overriding the `vercel` preset.
-- SEO files reference the Lovable preview URL
-  (`https://insight-spark-studio-93.lovable.app`) in `src/routes/sitemap[.]xml.ts`
-  and `public/robots.txt`. After deploying, update these to your Vercel domain.
-- Requires Bun (Vercel installs deps with `bun install`). Vercel supports Bun
-  out of the box; no extra setup needed.
+- `vercel.json` sets `framework: null` so Vercel deploys the Nitro-generated `.vercel/output` directory instead of applying its own framework preset.
+- SEO files reference `https://vibequest.vercel.app` in `src/routes/sitemap[.]xml.ts`. After deploying, update this to your production domain if needed.
+

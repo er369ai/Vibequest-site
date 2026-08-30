@@ -18,10 +18,10 @@ export const Route = createFileRoute("/")({
           "Real-world quests, skill matching, XP and a QR-powered local partner ecosystem. A reason to go outside.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://insight-spark-studio-93.lovable.app/" },
+      { property: "og:url", content: "https://vibequest.vercel.app/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "https://insight-spark-studio-93.lovable.app/" }],
+    links: [{ rel: "canonical", href: "https://vibequest.vercel.app/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -31,14 +31,14 @@ export const Route = createFileRoute("/")({
             {
               "@type": "WebSite",
               name: "Vibe Quest",
-              url: "https://insight-spark-studio-93.lovable.app/",
+              url: "https://vibequest.vercel.app/",
               description:
                 "Mobile social adventure platform turning everyday life into real-world quests.",
             },
             {
               "@type": "Organization",
               name: "Vibe Quest",
-              url: "https://insight-spark-studio-93.lovable.app/",
+              url: "https://vibequest.vercel.app/",
               description:
                 "Vibe Quest connects people through real-world quests, skill building and a local partner rewards ecosystem.",
             },
@@ -46,6 +46,7 @@ export const Route = createFileRoute("/")({
         }),
       },
     ],
+
   }),
 
   component: Landing,

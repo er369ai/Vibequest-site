@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "https://insight-spark-studio-93.lovable.app";
+const BASE_URL = process.env.SITE_URL || "https://vibequest.vercel.app";
 
 interface SitemapEntry {
   path: string;
