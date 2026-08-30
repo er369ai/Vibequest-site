@@ -1,7 +1,19 @@
 import { useState } from "react";
 import { PhoneFrame, StatusBar, TabBar } from "./PhoneFrame";
+import {
+  Zap,
+  CheckCircle2,
+  MapPin,
+  Sparkles,
+  Award,
+  Moon,
+  Palette,
+  Coffee,
+  ShieldCheck,
+  UserCheck,
+} from "lucide-react";
 
-const chip = "rounded-full px-2.5 py-0.5 text-[10px] font-bold";
+const chip = "rounded-full px-2.5 py-0.5 text-[10px] font-bold flex items-center gap-1";
 
 export function InteractivePhoneSimulator() {
   const [activeTab, setActiveTab] = useState<string>("Quests");
@@ -48,8 +60,8 @@ export function DiscoverScreen({
         <StatusBar />
         <div className="mt-2 flex items-center justify-between">
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-widest text-cyan-400">
-              Cyprus · Live Now ⚡
+            <p className="text-[10px] font-bold uppercase tracking-widest text-cyan-400 flex items-center gap-1">
+              <Zap className="h-3 w-3" /> Cyprus · Live Now
             </p>
             <h3 className="font-display text-lg font-bold text-white">Hey Deniz, pick a vibe</h3>
           </div>
@@ -62,16 +74,22 @@ export function DiscoverScreen({
           </button>
         </div>
         <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
-          <span className={`${chip} bg-cyan-500 text-slate-950 shadow-[0_0_10px_rgba(0,242,254,0.5)]`}>🌙 Chill Vibes</span>
-          <span className={`${chip} border border-white/10 bg-white/5 text-slate-300`}>⚡ High-Energy</span>
-          <span className={`${chip} border border-white/10 bg-white/5 text-slate-300`}>🎨 Creative</span>
+          <span className={`${chip} bg-cyan-500 text-slate-950 shadow-[0_0_10px_rgba(0,242,254,0.5)]`}>
+            <Moon className="h-3 w-3" /> Chill Vibes
+          </span>
+          <span className={`${chip} border border-white/10 bg-white/5 text-slate-300`}>
+            <Zap className="h-3 w-3" /> High-Energy
+          </span>
+          <span className={`${chip} border border-white/10 bg-white/5 text-slate-300`}>
+            <Palette className="h-3 w-3" /> Creative
+          </span>
         </div>
       </div>
 
       <div className="flex-1 space-y-2.5 overflow-y-auto px-3.5 py-3">
         {joinedQuest && (
-          <div className="animate-xp-pop rounded-xl border border-gold/40 bg-amber-500/10 p-2.5 text-center text-xs font-bold text-amber-300">
-            🎉 Quest Joined! +120 XP Reserved at Golden Hour Shoot
+          <div className="animate-xp-pop rounded-xl border border-gold/40 bg-amber-500/10 p-2.5 text-center text-xs font-bold text-amber-300 flex items-center justify-center gap-1.5">
+            <CheckCircle2 className="h-3.5 w-3.5" /> Quest Joined! +120 XP Reserved at Golden Hour Shoot
           </div>
         )}
 
@@ -197,8 +215,8 @@ export function RadarScreen({ onTabSelect }: { onTabSelect?: (t: string) => void
     <>
       <div className="bg-slate-950 px-4 pb-2">
         <StatusBar />
-        <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-cyan-400">
-          Live Quest Radar · Cyprus
+        <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-cyan-400 flex items-center gap-1">
+          <Compass className="h-3 w-3" /> Live Quest Radar · Cyprus
         </p>
       </div>
 
@@ -218,14 +236,14 @@ export function RadarScreen({ onTabSelect }: { onTabSelect?: (t: string) => void
         <div className="absolute left-1/2 top-1/2 h-32 w-32 origin-top-left animate-radar rounded-tl-full bg-gradient-to-br from-cyan-400/30 to-transparent" />
 
         {/* Pins on map */}
-        <div className="absolute left-16 top-16 rounded-full bg-amber-500/20 px-2 py-1 border border-amber-400 text-[9px] font-bold text-amber-300 animate-float-slow shadow-glow-gold">
-          📍 Sunset Photo Shoot (0.8km)
+        <div className="absolute left-12 top-16 flex items-center gap-1 rounded-full bg-amber-500/20 px-2 py-1 border border-amber-400 text-[9px] font-bold text-amber-300 animate-float-slow shadow-glow-gold">
+          <MapPin className="h-2.5 w-2.5" /> Sunset Photo (0.8km)
         </div>
-        <div className="absolute right-8 top-36 rounded-full bg-purple-500/20 px-2 py-1 border border-purple-400 text-[9px] font-bold text-purple-300 animate-float-delayed">
-          📍 Acoustic Jam (1.4km)
+        <div className="absolute right-6 top-36 flex items-center gap-1 rounded-full bg-purple-500/20 px-2 py-1 border border-purple-400 text-[9px] font-bold text-purple-300 animate-float-delayed">
+          <MapPin className="h-2.5 w-2.5" /> Acoustic Jam (1.4km)
         </div>
-        <div className="absolute left-10 bottom-16 rounded-full bg-cyan-500/20 px-2 py-1 border border-cyan-400 text-[9px] font-bold text-cyan-300">
-          📍 Espresso Tasting (0.4km)
+        <div className="absolute left-8 bottom-16 flex items-center gap-1 rounded-full bg-cyan-500/20 px-2 py-1 border border-cyan-400 text-[9px] font-bold text-cyan-300">
+          <MapPin className="h-2.5 w-2.5" /> Espresso Tasting (0.4km)
         </div>
       </div>
 
@@ -241,8 +259,8 @@ export function MatchScreen({ onTabSelect }: { onTabSelect?: (t: string) => void
     <>
       <div className="bg-slate-950 px-4 pb-3">
         <StatusBar />
-        <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-cyan-400">
-          Skill Matcher Engine
+        <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-cyan-400 flex items-center gap-1">
+          <UserCheck className="h-3 w-3" /> Skill Matcher Engine
         </p>
         <h3 className="font-display text-sm font-bold text-white">Select Mastery Partner Type</h3>
       </div>
@@ -286,8 +304,9 @@ export function MatchScreen({ onTabSelect }: { onTabSelect?: (t: string) => void
           </button>
         ))}
 
-        <div className="rounded-xl border border-white/10 bg-slate-900/60 p-2.5 text-[10px] text-slate-400">
-          ⚙️ Algorithmic scoring matches by Cyprus location radius, availability, and skill level.
+        <div className="rounded-xl border border-white/10 bg-slate-900/60 p-2.5 text-[10px] text-slate-400 flex items-center gap-1.5">
+          <Sparkles className="h-3 w-3 shrink-0 text-cyan-400" />
+          <span>Algorithmic scoring matches by location radius, availability, and skill level.</span>
         </div>
       </div>
 
@@ -309,8 +328,8 @@ export function QrScreen({
     <>
       <div className="bg-slate-950 px-4 pb-2">
         <StatusBar />
-        <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-cyan-400">
-          Partner Verification
+        <p className="mt-1 text-[10px] font-bold uppercase tracking-widest text-cyan-400 flex items-center gap-1">
+          <ShieldCheck className="h-3 w-3" /> Partner Verification
         </p>
       </div>
 
@@ -332,8 +351,8 @@ export function QrScreen({
         </div>
 
         {scannedQr ? (
-          <div className="mt-4 w-full animate-xp-pop rounded-xl border border-amber-400/40 bg-amber-500/10 p-2.5 text-xs font-bold text-amber-300">
-            🎉 +70 XP Verified! Free Filter Coffee Unlocked
+          <div className="mt-4 w-full animate-xp-pop rounded-xl border border-amber-400/40 bg-amber-500/10 p-2.5 text-xs font-bold text-amber-300 flex items-center justify-center gap-1.5">
+            <Award className="h-3.5 w-3.5" /> +70 XP Verified! Free Filter Coffee Unlocked
           </div>
         ) : (
           <button

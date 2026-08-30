@@ -3,6 +3,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImage from "@/assets/hero-quest.jpg";
 import { SiteShell, TOPICS } from "@/components/vq/SiteShell";
 import { InteractivePhoneSimulator } from "@/components/vq/screens";
+import {
+  Zap,
+  Coffee,
+  Target,
+  Sprout,
+  MapPin,
+  ArrowRight,
+  ShieldCheck,
+  Award,
+  Sparkles,
+} from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -66,7 +77,7 @@ function Landing() {
             >
               <span className="relative z-10 flex items-center gap-2">
                 Explore Full App Simulator
-                <span className="transition-transform group-hover:translate-x-1">→</span>
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
             </Link>
             <Link
@@ -82,7 +93,7 @@ function Landing() {
             {[
               ["18–32", "Core Audience"],
               ["3", "Ecosystem Layers"],
-              ["Cyprus 🇨🇾", "Launch Market"],
+              ["Cyprus", "Launch Market"],
             ].map(([v, l]) => (
               <div key={l} className="glass-card rounded-2xl p-4 text-center border border-white/10">
                 <dt className="font-display text-xl font-bold text-cyan-400">{v}</dt>
@@ -96,8 +107,10 @@ function Landing() {
         <div className="relative flex justify-center lg:col-span-5">
           {/* Floating pill badges around the phone */}
           <div className="pointer-events-none absolute -left-6 top-10 z-20 hidden rounded-2xl border border-cyan-400/30 bg-slate-900/90 p-3 shadow-glow-cyan backdrop-blur-xl sm:block animate-float-slow">
-            <div className="flex items-center gap-2">
-              <span className="text-base">⚡</span>
+            <div className="flex items-center gap-2.5">
+              <div className="rounded-lg bg-cyan-500/20 p-1.5 text-cyan-400">
+                <Zap className="h-4 w-4" />
+              </div>
               <div>
                 <p className="text-[10px] font-bold uppercase text-cyan-400">Quest Verified</p>
                 <p className="text-xs font-bold text-white">+120 XP · Sunset Photography</p>
@@ -106,8 +119,10 @@ function Landing() {
           </div>
 
           <div className="pointer-events-none absolute -right-6 bottom-16 z-20 hidden rounded-2xl border border-amber-400/30 bg-slate-900/90 p-3 shadow-glow-gold backdrop-blur-xl sm:block animate-float-delayed">
-            <div className="flex items-center gap-2">
-              <span className="text-base">☕</span>
+            <div className="flex items-center gap-2.5">
+              <div className="rounded-lg bg-amber-500/20 p-1.5 text-amber-400">
+                <Coffee className="h-4 w-4" />
+              </div>
               <div>
                 <p className="text-[10px] font-bold uppercase text-amber-400">Reward Unlocked</p>
                 <p className="text-xs font-bold text-white">Free Espresso @ Kordon Cafe</p>
@@ -192,8 +207,8 @@ function Landing() {
         <div className="mt-12 grid gap-6 md:grid-cols-12">
           {/* Card 1: Skill Matcher */}
           <div className="glass-card group rounded-3xl p-8 md:col-span-7 hover:border-cyan-400/50 hover:shadow-glow-cyan">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/20 text-cyan-400 text-xl font-bold">
-              🎯
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/20 text-cyan-400">
+              <Target className="h-6 w-6" />
             </div>
             <h3 className="mt-6 font-display text-2xl font-bold text-white">
               Skill Matching Engine
@@ -222,8 +237,8 @@ function Landing() {
 
           {/* Card 2: QR Partner Commerce */}
           <div className="glass-card group rounded-3xl p-8 md:col-span-5 hover:border-amber-400/50 hover:shadow-glow-gold">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500/20 text-amber-400 text-xl font-bold">
-              ☕
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500/20 text-amber-400">
+              <Coffee className="h-6 w-6" />
             </div>
             <h3 className="mt-6 font-display text-2xl font-bold text-white">
               QR-Powered Local Rewards
@@ -244,8 +259,8 @@ function Landing() {
 
           {/* Card 3: Gamified XP Progression */}
           <div className="glass-card group rounded-3xl p-8 md:col-span-5 hover:border-purple-400/50">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-500/20 text-purple-400 text-xl font-bold">
-              ⚡
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-500/20 text-purple-400">
+              <Zap className="h-6 w-6" />
             </div>
             <h3 className="mt-6 font-display text-2xl font-bold text-white">
               Gamified XP & Leveling
@@ -266,8 +281,8 @@ function Landing() {
 
           {/* Card 4: Anti-Burnout Social Proof */}
           <div className="glass-card group rounded-3xl p-8 md:col-span-7 hover:border-orange-400/50 hover:shadow-glow-orange">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-500/20 text-orange-400 text-xl font-bold">
-              🌱
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-500/20 text-orange-400">
+              <Sprout className="h-6 w-6" />
             </div>
             <h3 className="mt-6 font-display text-2xl font-bold text-white">
               Anti-Burnout Social Proof

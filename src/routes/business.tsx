@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { TopicPage } from "@/components/vq/SiteShell";
+import { ShieldCheck } from "lucide-react";
 
 export const Route = createFileRoute("/business")({
   head: () => ({
@@ -44,8 +45,11 @@ function BusinessPage() {
               </div>
             ))}
           </div>
-          <div className="mt-6 rounded-2xl border border-amber-400/30 bg-amber-500/10 p-5 text-sm font-semibold text-amber-300">
-            🛡️ <strong className="text-white">Privacy Principle</strong> — QR participation is built on zero-knowledge consent and purpose-specific verification without exposing personal phone numbers or sensitive user data.
+          <div className="mt-6 rounded-2xl border border-amber-400/30 bg-amber-500/10 p-5 text-sm font-semibold text-amber-300 flex items-start gap-3">
+            <ShieldCheck className="h-5 w-5 shrink-0 text-amber-400 mt-0.5" />
+            <p className="leading-relaxed">
+              <strong className="text-white">Privacy Principle</strong> — QR participation is built on zero-knowledge consent and purpose-specific verification without exposing personal phone numbers or sensitive user data.
+            </p>
           </div>
         </div>
 

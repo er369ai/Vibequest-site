@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Zap, Compass, Target, User } from "lucide-react";
 
 export function PhoneFrame({
   children,
@@ -54,30 +55,34 @@ export function TabBar({
   onTabSelect?: (tab: string) => void;
 }) {
   const tabs = [
-    { id: "Quests", icon: "⚡", label: "Quests" },
-    { id: "Radar", icon: "📡", label: "Radar" },
-    { id: "Skills", icon: "🎯", label: "Skills" },
-    { id: "Profile", icon: "👤", label: "Profile" },
+    { id: "Quests", icon: Zap, label: "Quests" },
+    { id: "Radar", icon: Compass, label: "Radar" },
+    { id: "Skills", icon: Target, label: "Skills" },
+    { id: "Profile", icon: User, label: "Profile" },
   ];
 
   return (
     <div className="z-20 grid grid-cols-4 border-t border-white/10 bg-slate-950/90 px-2 py-2 backdrop-blur-xl">
-      {tabs.map((t) => (
-        <button
-          key={t.id}
-          type="button"
-          onClick={() => onTabSelect?.(t.id)}
-          className={`flex flex-col items-center gap-0.5 text-[10px] font-bold transition-all ${
-            t.id === active ? "text-cyan-400 scale-105" : "text-slate-400 hover:text-slate-200"
-          }`}
-        >
-          <span className="text-xs">{t.icon}</span>
-          <span>{t.label}</span>
-          {t.id === active && (
-            <span className="h-1 w-1 rounded-full bg-cyan-400 shadow-[0_0_6px_#00F2FE]" />
-          )}
-        </button>
-      ))}
+      {tabs.map((t) => {
+        const IconComponent = t.icon;
+        const isActive = t.id === active;
+        return (
+          <button
+            key={t.id}
+            type="button"
+            onClick={() => onTabSelect?.(t.id)}
+            className={`flex flex-col items-center gap-0.5 text-[10px] font-bold transition-all ${
+              isActive ? "text-cyan-400 scale-105" : "text-slate-400 hover:text-slate-200"
+            }`}
+          >
+            <IconComponent className="h-3.5 w-3.5" />
+            <span>{t.label}</span>
+            {isActive && (
+              <span className="h-1 w-1 rounded-full bg-cyan-400 shadow-[0_0_6px_#00F2FE]" />
+            )}
+          </button>
+        );
+      })}
     </div>
   );
 }

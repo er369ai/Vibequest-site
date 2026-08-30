@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
 import { Logo } from "@/components/vq/Logo";
+import { MapPin, ArrowRight } from "lucide-react";
 
 export const TOPICS = [
   { to: "/problem", label: "Problem", blurb: "Why passive scrolling fails people." },
@@ -45,7 +46,7 @@ export function FloatingHeader() {
         >
           <span className="relative z-10 flex items-center gap-1.5 font-extrabold uppercase tracking-wide">
             Interactive Demo
-            <span className="transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+            <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
           </span>
         </Link>
       </div>
@@ -93,8 +94,8 @@ export function SiteFooter() {
         </div>
         <div className="flex flex-wrap items-center gap-4 text-xs font-semibold">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-cyan-400">
-            <span className="h-2 w-2 rounded-full bg-cyan-400 animate-ping" />
-            Launch Market: Cyprus 🇨🇾
+            <MapPin className="h-3 w-3" />
+            Launch Market: Cyprus
           </span>
           <Link to="/app" className="text-slate-300 transition-colors hover:text-cyan-400">
             Try App Simulator →
@@ -167,7 +168,7 @@ export function TopicNavGrid() {
           <Link
             key={t.to}
             to={t.to}
-            className="group glass-card rounded-2xl p-5 hover:border-cyan-500/40 hover:shadow-glow-cyan"
+            className="group glass-card rounded-2xl p-5 hover:border-cyan-400/40 hover:shadow-glow-cyan"
           >
             <p className="font-display font-bold text-white transition-colors group-hover:text-cyan-400">{t.label}</p>
             <p className="mt-1 text-xs text-slate-400">{t.blurb}</p>
