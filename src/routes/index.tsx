@@ -144,14 +144,9 @@ function Landing() {
                 height={800}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between rounded-2xl border border-white/10 bg-slate-950/80 p-4 backdrop-blur-xl">
-                <div>
-                  <p className="text-xs font-bold text-white">Kyrenia Golden Hour Shoot</p>
-                  <p className="text-[11px] text-slate-400">Cyprus Outdoor Photography Quest</p>
-                </div>
-                <span className="rounded-full bg-cyan-400 px-3 py-1 text-xs font-extrabold text-slate-950">
-                  +120 XP
-                </span>
+              <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/10 bg-slate-950/80 p-4 backdrop-blur-xl">
+                <p className="text-xs font-bold text-white">Kyrenia Outdoor Photography</p>
+                <p className="text-[11px] text-slate-400">Cyprus Real-World Community Quest</p>
               </div>
             </div>
           </div>
