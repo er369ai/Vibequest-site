@@ -14,6 +14,4 @@ export default defineConfig({
     }),
     viteReact(),
   ],
-  nitro: { preset: "vercel" },
 });
-
