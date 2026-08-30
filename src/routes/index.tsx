@@ -8,27 +8,30 @@ import {
   Coffee,
   Target,
   Sprout,
-  MapPin,
   ArrowRight,
   ShieldCheck,
   Award,
   Sparkles,
+  Heart,
+  Quote,
+  Users,
+  Compass,
 } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Vibe Quest — Less scrolling. More living. Real-World Social Quests." },
+      { title: "Vibe Quest — Stop scrolling alone. Find your crowd in Cyprus." },
       {
         name: "description",
         content:
-          "Vibe Quest turns everyday life into real-world quests: meet people, build skills, earn XP and unlock rewards at local places in Cyprus.",
+          "Vibe Quest brings people together in the real world in Cyprus: photo walks, coffee jams, language swaps, and local venue perks.",
       },
-      { property: "og:title", content: "Vibe Quest — Less scrolling. More living." },
+      { property: "og:title", content: "Vibe Quest — Stop scrolling alone. Find your crowd." },
       {
         property: "og:description",
         content:
-          "Real-world quests, skill matching, XP and a QR-powered local partner ecosystem. A reason to go outside.",
+          "Real-world meetups, skill practice, and local cafe perks across Cyprus. A reason to go outside.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://vibequest.vercel.app/" },
@@ -53,20 +56,17 @@ function Landing() {
         <div className="lg:col-span-7">
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-xs font-bold text-cyan-400">
             <span className="h-2 w-2 rounded-full bg-cyan-400 animate-ping" />
-            MOBILE SOCIAL ADVENTURE PLATFORM
+            CYPRUS OFFLINE COMMUNITY
           </div>
 
           <h1 className="mt-6 font-display text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
-            <span className="text-gradient-brand">Less scrolling.</span>
+            <span className="text-gradient-brand">Stop scrolling alone.</span>
             <br />
-            More living.
-            <br />
-            <span className="text-slate-200">More growing.</span>
+            Find your crowd in Cyprus.
           </h1>
 
-          <p className="mt-6 max-w-2xl text-lg text-slate-400 leading-relaxed sm:text-xl">
-            Vibe Quest turns everyday life into meaningful real-world experiences — connecting
-            people through fun skill quests, coffee jams, photo shoots, and local venue rewards.
+          <p className="mt-6 max-w-2xl text-lg text-slate-300 leading-relaxed sm:text-xl">
+            Vibe Quest brings people together for sunset photography, acoustic jams, language swaps, and coffee meetups at local spots across Cyprus.
           </p>
 
           {/* Action CTAs */}
@@ -76,7 +76,7 @@ function Landing() {
               className="group relative overflow-hidden rounded-full bg-gradient-brand px-8 py-4 text-sm font-extrabold text-slate-950 shadow-glow-cyan transition-all hover:scale-105"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Explore Full App Simulator
+                Try Interactive App Demo
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
             </Link>
@@ -84,15 +84,15 @@ function Landing() {
               to="/flow"
               className="glass-card rounded-full px-8 py-4 text-sm font-bold text-white hover:border-cyan-400/50 hover:bg-white/10"
             >
-              See Core Quest Flow
+              How It Works
             </Link>
           </div>
 
           {/* Key Metrics Grid */}
           <dl className="mt-12 grid max-w-xl grid-cols-3 gap-4">
             {[
-              ["18–32", "Core Audience"],
-              ["3", "Ecosystem Layers"],
+              ["18–32", "Young Adults"],
+              ["100% Real", "In-Person Meetups"],
               ["Cyprus", "Launch Market"],
             ].map(([v, l]) => (
               <div key={l} className="glass-card rounded-2xl p-4 text-center border border-white/10">
@@ -112,8 +112,8 @@ function Landing() {
                 <Zap className="h-4 w-4" />
               </div>
               <div>
-                <p className="text-[10px] font-bold uppercase text-cyan-400">Quest Verified</p>
-                <p className="text-xs font-bold text-white">+120 XP · Sunset Photography</p>
+                <p className="text-[10px] font-bold uppercase text-cyan-400">Verified Meetup</p>
+                <p className="text-xs font-bold text-white">+120 XP · Sunset Photo Walk</p>
               </div>
             </div>
           </div>
@@ -124,8 +124,8 @@ function Landing() {
                 <Coffee className="h-4 w-4" />
               </div>
               <div>
-                <p className="text-[10px] font-bold uppercase text-amber-400">Reward Unlocked</p>
-                <p className="text-xs font-bold text-white">Free Espresso @ Kordon Cafe</p>
+                <p className="text-[10px] font-bold uppercase text-amber-400">Cafe Reward</p>
+                <p className="text-xs font-bold text-white">Free Filter Coffee @ Nicosia</p>
               </div>
             </div>
           </div>
@@ -135,120 +135,126 @@ function Landing() {
         </div>
       </section>
 
-      {/* LIVE QUEST RADAR BANNER */}
+      {/* REAL STORIES & COMMUNITY TESTIMONIALS */}
       <section className="relative my-12 border-y border-white/10 bg-slate-950/60 py-16 backdrop-blur-xl">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="grid items-center gap-8 lg:grid-cols-12">
-            <div className="lg:col-span-6">
-              <span className="rounded-full border border-orange-500/30 bg-orange-500/10 px-3.5 py-1 text-xs font-bold text-orange-400">
-                REAL-TIME SOCIAL ENGINE
-              </span>
-              <h2 className="mt-4 font-display text-3xl font-extrabold text-white sm:text-4xl">
-                Turn your city into an active quest map.
-              </h2>
-              <p className="mt-4 text-slate-400 leading-relaxed">
-                No endless scrolling. Vibe Quest scans your local Cyprus area for real-world groups, photo walks, skill swaps, and coffee meetups happening right now.
-              </p>
-              <div className="mt-6 flex items-center gap-6">
-                <div>
-                  <p className="font-display text-2xl font-bold text-cyan-400">45+</p>
-                  <p className="text-xs text-slate-400">Weekly Quests</p>
-                </div>
-                <div className="h-8 w-px bg-white/10" />
-                <div>
-                  <p className="font-display text-2xl font-bold text-orange-400">12</p>
-                  <p className="text-xs text-slate-400">Cyprus Partners</p>
-                </div>
-                <div className="h-8 w-px bg-white/10" />
-                <div>
-                  <p className="font-display text-2xl font-bold text-amber-400">94%</p>
-                  <p className="text-xs text-slate-400">Show-up Rate</p>
-                </div>
-              </div>
-            </div>
+          <div className="text-center">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3.5 py-1 text-xs font-bold text-cyan-400">
+              <Heart className="h-3.5 w-3.5 text-cyan-400" /> REAL PEOPLE IN CYPRUS
+            </span>
+            <h2 className="mt-4 font-display text-3xl font-extrabold text-white sm:text-4xl">
+              Stories from our community.
+            </h2>
+            <p className="mt-2 text-slate-400">
+              Here is what happens when people step away from feeds and meet up in real life.
+            </p>
+          </div>
 
-            <div className="relative overflow-hidden rounded-3xl border border-cyan-500/30 bg-slate-900 p-6 shadow-glow-cyan lg:col-span-6">
-              <img
-                src={heroImage}
-                alt="Vibe Quest Cyprus adventurers at golden hour"
-                className="w-full rounded-2xl object-cover opacity-80"
-                width={1200}
-                height={800}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
-              <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between rounded-2xl border border-white/10 bg-slate-950/80 p-4 backdrop-blur-xl">
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                quote:
+                  "I was tired of spending Friday nights scrolling alone. Vibe Quest helped me meet three local photographers in Kyrenia on my very first weekend.",
+                name: "Eleni P.",
+                role: "Kyrenia · Photographer",
+                badge: "Found Her Crew",
+              },
+              {
+                quote:
+                  "Instead of paying for expensive solo guitar lessons, I found a peer to practice open chords with every Thursday at Kordon Cafe.",
+                name: "Marcus T.",
+                role: "Nicosia · Music Enthusiast",
+                badge: "Skill Practice",
+              },
+              {
+                quote:
+                  "Our cafe got 40+ new regular customers during off-peak Tuesdays simply by hosting weekly acoustic coffee hours.",
+                name: "Kosta M.",
+                role: "Venue Owner · Nicosia Roastery",
+                badge: "Local Business Partner",
+              },
+            ].map((story) => (
+              <div key={story.name} className="glass-card rounded-3xl p-6 border border-white/10 flex flex-col justify-between hover:border-cyan-400/40">
                 <div>
-                  <p className="text-xs font-bold text-white">Karaoğlanoğlu Beach Shoot</p>
-                  <p className="text-[11px] text-slate-400">Cyprus · 4 Adventurers Joined</p>
+                  <Quote className="h-6 w-6 text-cyan-400/60" />
+                  <p className="mt-4 text-sm text-slate-300 leading-relaxed italic">
+                    &ldquo;{story.quote}&rdquo;
+                  </p>
                 </div>
-                <span className="rounded-full bg-cyan-400 px-3 py-1 text-xs font-extrabold text-slate-950">
-                  +120 XP
-                </span>
+                <div className="mt-6 pt-4 border-t border-white/10 flex items-center justify-between">
+                  <div>
+                    <p className="font-display font-bold text-white text-sm">{story.name}</p>
+                    <p className="text-[11px] text-slate-400">{story.role}</p>
+                  </div>
+                  <span className="rounded-full bg-cyan-400/10 px-2.5 py-0.5 text-[10px] font-bold text-cyan-400 border border-cyan-400/30">
+                    {story.badge}
+                  </span>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* BENTO GRID FEATURE SHOWCASE */}
+      {/* CORE PILLARS SHOWCASE */}
       <section className="mx-auto max-w-6xl px-6 py-16">
         <div className="text-center">
           <p className="text-xs font-bold uppercase tracking-[0.25em] text-cyan-400">
-            THE ARCHITECTURE
+            WHY PEOPLE LOVE IT
           </p>
           <h2 className="mt-3 font-display text-3xl font-black text-white sm:text-5xl">
-            Built for real connection & growth.
+            Real moments, real skills, real perks.
           </h2>
           <p className="mt-3 mx-auto max-w-xl text-slate-400">
-            Four core pillars designed to replace digital burnout with offline adventures.
+            Built to make going outside effortless and rewarding.
           </p>
         </div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-12">
-          {/* Card 1: Skill Matcher */}
+          {/* Pillar 1 */}
           <div className="glass-card group rounded-3xl p-8 md:col-span-7 hover:border-cyan-400/50 hover:shadow-glow-cyan">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/20 text-cyan-400">
-              <Target className="h-6 w-6" />
+              <Users className="h-6 w-6" />
             </div>
             <h3 className="mt-6 font-display text-2xl font-bold text-white">
-              Skill Matching Engine
+              Skill Swap & Practice
             </h3>
             <p className="mt-2 text-slate-400 leading-relaxed">
-              Match with peers, guides, or certified coaches based on skill level, location proximity, and vibe preference.
+              Find a practice partner at your level or learn from someone a step ahead. No pressure, just mutual learning over coffee.
             </p>
             <div className="mt-6 rounded-2xl border border-white/10 bg-slate-950/60 p-4">
               <div className="flex items-center justify-between text-xs font-bold text-slate-300">
-                <span>Guitar Open Chords Match</span>
+                <span>Guitar Practice Pair</span>
                 <span className="text-cyan-400">Match score: 98%</span>
               </div>
               <div className="mt-3 flex items-center justify-around gap-2 text-center text-xs">
                 <div className="rounded-xl bg-white/5 p-2 w-full">
                   <p className="font-bold text-white">Deniz (You)</p>
-                  <p className="text-[10px] text-slate-400">Lv 2 Novice</p>
+                  <p className="text-[10px] text-slate-400">Learner</p>
                 </div>
                 <span className="text-cyan-400 font-bold">↔</span>
                 <div className="rounded-xl bg-cyan-500/20 border border-cyan-400/30 p-2 w-full">
                   <p className="font-bold text-cyan-300">Alex M.</p>
-                  <p className="text-[10px] text-cyan-400">Lv 3 Peer</p>
+                  <p className="text-[10px] text-cyan-400">Practice Peer</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Card 2: QR Partner Commerce */}
+          {/* Pillar 2 */}
           <div className="glass-card group rounded-3xl p-8 md:col-span-5 hover:border-amber-400/50 hover:shadow-glow-gold">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500/20 text-amber-400">
               <Coffee className="h-6 w-6" />
             </div>
             <h3 className="mt-6 font-display text-2xl font-bold text-white">
-              QR-Powered Local Rewards
+              Free Local Perks
             </h3>
             <p className="mt-2 text-slate-400 leading-relaxed">
-              Verify attendance at partner cafes & gyms via QR codes to earn real XP and unlock food, drink & activity perks.
+              Show up to partner cafes & climbing gyms, scan a quick QR code, and unlock free coffee, discounts, or pass upgrades.
             </p>
             <div className="mt-6 flex items-center justify-between rounded-2xl border border-amber-400/30 bg-amber-500/10 p-4">
               <div>
-                <p className="text-xs font-bold text-amber-300">Voucher Unlocked</p>
+                <p className="text-xs font-bold text-amber-300">Reward Unlocked</p>
                 <p className="text-sm font-extrabold text-white">Free Artisan Filter Coffee</p>
               </div>
               <span className="rounded-full bg-amber-400 px-3 py-1 text-xs font-black text-slate-950">
@@ -257,16 +263,16 @@ function Landing() {
             </div>
           </div>
 
-          {/* Card 3: Gamified XP Progression */}
+          {/* Pillar 3 */}
           <div className="glass-card group rounded-3xl p-8 md:col-span-5 hover:border-purple-400/50">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-500/20 text-purple-400">
-              <Zap className="h-6 w-6" />
+              <Sparkles className="h-6 w-6" />
             </div>
             <h3 className="mt-6 font-display text-2xl font-bold text-white">
-              Gamified XP & Leveling
+              Real-World Milestones
             </h3>
             <p className="mt-2 text-slate-400 leading-relaxed">
-              Build your character in real life. Level up from Novice Explorer to Master Mentor with verified real-world proof.
+              Build your character in real life. Track your real-world show-ups, unlock level badges, and keep your weekly streak alive.
             </p>
             <div className="mt-6 space-y-2">
               <div className="flex justify-between text-xs font-bold">
@@ -279,16 +285,16 @@ function Landing() {
             </div>
           </div>
 
-          {/* Card 4: Anti-Burnout Social Proof */}
+          {/* Pillar 4 */}
           <div className="glass-card group rounded-3xl p-8 md:col-span-7 hover:border-orange-400/50 hover:shadow-glow-orange">
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-500/20 text-orange-400">
               <Sprout className="h-6 w-6" />
             </div>
             <h3 className="mt-6 font-display text-2xl font-bold text-white">
-              Anti-Burnout Social Proof
+              Less Screen Time
             </h3>
             <p className="mt-2 text-slate-400 leading-relaxed">
-              Designed explicitly to get you off screen and out into the real world. No infinite algorithmic feeds or doomscrolling.
+              Designed explicitly to get you off screen and out into the real world. No infinite doomscrolling feeds or algorithmic noise.
             </p>
             <div className="mt-6 grid grid-cols-2 gap-4">
               <div className="rounded-2xl bg-white/5 p-4 text-center">
@@ -304,19 +310,19 @@ function Landing() {
         </div>
       </section>
 
-      {/* B2B BUSINESS PARTNER ROI CALCULATOR */}
+      {/* B2B BUSINESS PARTNER CALCULATOR */}
       <section className="mx-auto max-w-6xl px-6 py-16">
         <div className="rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-slate-900 via-slate-950 to-[#0B0F17] p-8 shadow-glow-cyan md:p-12">
           <div className="grid gap-8 lg:grid-cols-12 items-center">
             <div className="lg:col-span-6">
               <span className="rounded-full border border-cyan-500/40 bg-cyan-500/10 px-3.5 py-1 text-xs font-bold text-cyan-400">
-                LOCAL PARTNER ECONOMY
+                LOCAL BUSINESS PARTNERS
               </span>
               <h2 className="mt-4 font-display text-3xl font-black text-white sm:text-4xl">
                 Partner with Vibe Quest Cyprus
               </h2>
               <p className="mt-3 text-slate-400 leading-relaxed">
-                Bring high-intent young adults (18-32) straight to your cafe, gym, or venue during off-peak hours with verified QR quest redemptions.
+                Bring high-intent young adults straight to your cafe, gym, or venue during off-peak hours with verified QR quest redemptions.
               </p>
 
               {/* Slider Controls */}
@@ -324,7 +330,7 @@ function Landing() {
                 <div>
                   <div className="flex justify-between text-sm font-bold text-slate-300">
                     <span>Monthly Quest Visitors</span>
-                    <span className="text-cyan-400 font-display text-base">{visitors} adventurers</span>
+                    <span className="text-cyan-400 font-display text-base">{visitors} visitors</span>
                   </div>
                   <input
                     type="range"
@@ -339,7 +345,7 @@ function Landing() {
 
                 <div>
                   <div className="flex justify-between text-sm font-bold text-slate-300">
-                    <span>Average Ticket / Order</span>
+                    <span>Average Order Value</span>
                     <span className="text-cyan-400 font-display text-base">€{ticketSize}</span>
                   </div>
                   <input
@@ -358,7 +364,7 @@ function Landing() {
             {/* Calculated ROI Box */}
             <div className="glass-card rounded-2xl p-8 border border-white/20 text-center lg:col-span-6 shadow-2xl">
               <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
-                Projected Extra Monthly Venue Revenue
+                Projected Extra Monthly Revenue
               </p>
               <p className="mt-4 font-display text-5xl font-black text-gradient-brand sm:text-6xl">
                 +€{projectedRevenue.toLocaleString()}
@@ -378,26 +384,15 @@ function Landing() {
         </div>
       </section>
 
-      {/* DEEP DIVE TOPICS GRID */}
-      <section className="bg-slate-950/80 border-t border-white/10 py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="font-display text-2xl font-bold text-white sm:text-3xl">Explore Product Pillars</h2>
-          <p className="mt-2 text-slate-400">
-            Learn more about Vibe Quest&apos;s product model, matching algorithm, and Cyprus market rollout.
+      {/* FOUNDER & COMMUNITY NOTE */}
+      <section className="mx-auto max-w-4xl px-6 py-12 text-center">
+        <div className="glass-card rounded-3xl p-8 border border-white/10">
+          <Heart className="mx-auto h-8 w-8 text-cyan-400" />
+          <h3 className="mt-4 font-display text-2xl font-bold text-white">Built for real-world connection.</h3>
+          <p className="mt-3 text-slate-400 text-sm max-w-xl mx-auto leading-relaxed">
+            We built Vibe Quest in Cyprus because we missed genuine in-person connection. Our goal isn&apos;t to keep you glued to your phone — it&apos;s to give you a reason to go outside, meet great people, and learn something new.
           </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {TOPICS.map((t) => (
-              <Link
-                key={t.to}
-                to={t.to}
-                className="group glass-card rounded-2xl p-6 transition-all hover:border-cyan-400/50 hover:shadow-glow-cyan"
-              >
-                <p className="font-display text-lg font-bold text-white group-hover:text-cyan-400">{t.label}</p>
-                <p className="mt-2 text-xs text-slate-400 leading-relaxed">{t.blurb}</p>
-                <p className="mt-4 text-xs font-bold text-cyan-400">Read detail →</p>
-              </Link>
-            ))}
-          </div>
+          <p className="mt-4 text-xs font-bold text-cyan-400">— The Vibe Quest Cyprus Team</p>
         </div>
       </section>
     </SiteShell>
