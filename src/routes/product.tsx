@@ -26,9 +26,8 @@ const LAYERS = [
   {
     name: "Vibe Quest Free",
     tag: "Social Layer",
-    border: "hover:border-cyan-400/50 hover:shadow-glow-cyan",
-    accent: "text-cyan-400",
-    dot: "bg-cyan-400",
+    accent: "text-blue-600",
+    dot: "bg-blue-600",
     points: [
       "Email & Google auth",
       "Personalized social quests",
@@ -40,9 +39,8 @@ const LAYERS = [
   {
     name: "Vibe Quest Pro",
     tag: "Growth Layer",
-    border: "hover:border-purple-400/50 hover:shadow-glow-orange",
-    accent: "text-purple-400",
-    dot: "bg-purple-400",
+    accent: "text-blue-600",
+    dot: "bg-blue-600",
     points: [
       "Multiple skill mastery trees",
       "Skill-specific quest generation",
@@ -54,9 +52,8 @@ const LAYERS = [
   {
     name: "Vibe Quest Partners",
     tag: "Commerce Layer",
-    border: "hover:border-amber-400/50 hover:shadow-glow-gold",
-    accent: "text-amber-400",
-    dot: "bg-amber-400",
+    accent: "text-blue-600",
+    dot: "bg-blue-600",
     points: [
       "Partner quests & sponsored experiences",
       "QR-based attendance verification",
@@ -78,11 +75,11 @@ function ProductPage() {
         {LAYERS.map((l) => (
           <div
             key={l.name}
-            className={`glass-card rounded-3xl p-6 border border-white/10 transition-all ${l.border}`}
+            className="glass-card rounded-3xl p-6 border border-slate-200 bg-white shadow-xs hover:border-blue-400"
           >
             <p className={`text-[10px] font-bold uppercase tracking-widest ${l.accent}`}>{l.tag}</p>
-            <h2 className="mt-2 font-display text-2xl font-bold text-white">{l.name}</h2>
-            <ul className="mt-6 space-y-3 text-sm text-slate-300">
+            <h2 className="mt-2 font-display text-2xl font-bold text-slate-900">{l.name}</h2>
+            <ul className="mt-6 space-y-3 text-sm text-slate-600">
               {l.points.map((p) => (
                 <li key={p} className="flex items-start gap-2.5">
                   <span className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${l.dot}`} />

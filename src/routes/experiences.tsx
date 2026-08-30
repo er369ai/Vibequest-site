@@ -28,25 +28,21 @@ const EXPERIENCES = [
     category: "Photography",
     icon: Camera,
     details: "Golden-hour Kyrenia beach shoot, street photowalk with a guide, portrait mentor session.",
-    accent: "text-cyan-400 border-cyan-400/40 hover:shadow-glow-cyan",
   },
   {
     category: "Guitar & Music",
     icon: Music,
     details: "Open chord practice circle, acoustic jam at Kordon, song arrangement with a mentor.",
-    accent: "text-purple-400 border-purple-400/40 hover:shadow-glow-orange",
   },
   {
     category: "Languages",
     icon: MessageSquare,
     details: "Spanish conversation walk, language exchange coffee hour, vocabulary sprint.",
-    accent: "text-amber-400 border-amber-400/40 hover:shadow-glow-gold",
   },
   {
     category: "Public Speaking",
     icon: Mic,
     details: "2-minute lightning talks, constructive feedback circle, speech structure coaching.",
-    accent: "text-orange-400 border-orange-400/40 hover:shadow-glow-orange",
   },
 ];
 
@@ -61,12 +57,12 @@ function ExperiencesPage() {
         {EXPERIENCES.map((exp) => {
           const IconComponent = exp.icon;
           return (
-            <div key={exp.category} className={`glass-card rounded-3xl p-6 border border-white/10 transition-all ${exp.accent}`}>
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-white">
+            <div key={exp.category} className="glass-card rounded-3xl p-6 border border-slate-200 bg-white shadow-xs hover:border-blue-400">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 border border-blue-200">
                 <IconComponent className="h-6 w-6" />
               </div>
-              <h2 className="mt-4 font-display text-xl font-bold text-white">{exp.category}</h2>
-              <p className="mt-2 text-xs text-slate-400 leading-relaxed">{exp.details}</p>
+              <h2 className="mt-4 font-display text-xl font-bold text-slate-900">{exp.category}</h2>
+              <p className="mt-2 text-xs text-slate-600 leading-relaxed">{exp.details}</p>
             </div>
           );
         })}

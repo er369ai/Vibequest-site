@@ -69,11 +69,11 @@ function AppMockup() {
   return (
     <SiteShell>
       <main className="mx-auto max-w-7xl px-6 py-8">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-cyan-400">App Concept Screens</p>
-        <h1 className="mt-3 max-w-3xl font-display text-4xl font-extrabold text-white sm:text-6xl">
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-blue-600">App Concept Screens</p>
+        <h1 className="mt-3 max-w-3xl font-display text-4xl font-extrabold text-slate-900 sm:text-6xl">
           The planned app experience.
         </h1>
-        <p className="mt-4 max-w-2xl text-slate-400">
+        <p className="mt-4 max-w-2xl text-slate-600">
           These screens illustrate the planned Vibe Quest mobile app flow: discover quests, find practice partners, verify at venues, and track your real-world progress.
         </p>
 
@@ -81,7 +81,7 @@ function AppMockup() {
           {SCREENS.map((s) => (
             <div key={s.label} className="flex flex-col items-center">
               <PhoneFrame label={s.label}>{s.node}</PhoneFrame>
-              <p className="mt-2 max-w-[280px] text-center text-xs text-slate-400 font-medium leading-snug">
+              <p className="mt-2 max-w-[280px] text-center text-xs text-slate-600 font-medium leading-snug">
                 {s.note}
               </p>
             </div>

@@ -42,12 +42,12 @@ function ProblemPage() {
         {PROBLEMS.map((p, idx) => (
           <li
             key={p}
-            className="glass-card rounded-2xl p-6 border border-white/10 text-sm font-medium text-slate-300 hover:border-orange-400/40 hover:shadow-glow-orange flex items-start gap-4"
+            className="glass-card rounded-2xl p-6 border border-slate-200 bg-white text-sm font-medium text-slate-700 shadow-xs hover:border-blue-400 flex items-start gap-4"
           >
-            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-xl bg-orange-500/20 text-xs font-bold text-orange-400">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-xs font-bold text-blue-600 border border-blue-200">
               0{idx + 1}
             </span>
-            <span className="leading-relaxed">{p}</span>
+            <span className="leading-relaxed text-slate-700 font-medium">{p}</span>
           </li>
         ))}
       </ul>

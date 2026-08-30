@@ -32,29 +32,29 @@ function BusinessPage() {
     >
       <div className="grid gap-10 lg:grid-cols-2">
         <div>
-          <h2 className="font-display text-xl font-bold text-white">Who Gains What</h2>
+          <h2 className="font-display text-xl font-bold text-slate-900">Who Gains What</h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {[
               ["Users", "XP, badges, real discounts & memorable experiences."],
               ["Businesses", "Qualified off-peak foot traffic, repeat customers & brand lift."],
               ["Vibe Quest", "Pro subscriptions, partner campaign fees & marketplace cut."],
             ].map(([t, d]) => (
-              <div key={t} className="glass-card rounded-2xl p-4 border border-white/10">
-                <p className="font-display font-bold text-cyan-400">{t}</p>
-                <p className="mt-1 text-xs text-slate-400 leading-relaxed">{d}</p>
+              <div key={t} className="glass-card rounded-2xl p-4 border border-slate-200 bg-white shadow-xs">
+                <p className="font-display font-bold text-blue-600">{t}</p>
+                <p className="mt-1 text-xs text-slate-600 leading-relaxed">{d}</p>
               </div>
             ))}
           </div>
-          <div className="mt-6 rounded-2xl border border-amber-400/30 bg-amber-500/10 p-5 text-sm font-semibold text-amber-300 flex items-start gap-3">
-            <ShieldCheck className="h-5 w-5 shrink-0 text-amber-400 mt-0.5" />
+          <div className="mt-6 rounded-2xl border border-blue-200 bg-blue-50 p-5 text-sm font-semibold text-blue-900 flex items-start gap-3">
+            <ShieldCheck className="h-5 w-5 shrink-0 text-blue-600 mt-0.5" />
             <p className="leading-relaxed">
-              <strong className="text-white">Privacy Principle</strong> — QR participation is built on zero-knowledge consent and purpose-specific verification without exposing personal phone numbers or sensitive user data.
+              <strong className="text-slate-900">Privacy Principle</strong> — QR participation is built on zero-knowledge consent and purpose-specific verification without exposing personal phone numbers or sensitive user data.
             </p>
           </div>
         </div>
 
         <div>
-          <h2 className="font-display text-xl font-bold text-white">Diversified Revenue Streams</h2>
+          <h2 className="font-display text-xl font-bold text-slate-900">Diversified Revenue Streams</h2>
           <ul className="mt-6 space-y-3 text-sm">
             {[
               ["Vibe Quest Pro", "Monthly & annual premium member perks."],
@@ -65,10 +65,10 @@ function BusinessPage() {
             ].map(([t, d]) => (
               <li
                 key={t}
-                className="flex items-center justify-between gap-4 glass-card rounded-2xl p-4 border border-white/10"
+                className="flex items-center justify-between gap-4 glass-card rounded-2xl p-4 border border-slate-200 bg-white shadow-xs"
               >
-                <span className="font-bold text-white">{t}</span>
-                <span className="text-right text-xs font-semibold text-cyan-400">{d}</span>
+                <span className="font-bold text-slate-900">{t}</span>
+                <span className="text-right text-xs font-semibold text-blue-600">{d}</span>
               </li>
             ))}
           </ul>

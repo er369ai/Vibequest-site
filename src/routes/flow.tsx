@@ -35,9 +35,9 @@ function FlowPage() {
         {FLOW.map((step, i) => (
           <li
             key={step}
-            className="flex items-center gap-2 rounded-full glass-card border border-white/10 px-4 py-2 text-sm font-bold text-white shadow-glow-cyan"
+            className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-900 shadow-xs"
           >
-            <span className="grid h-6 w-6 place-items-center rounded-full bg-gradient-brand text-[11px] font-black text-slate-950">
+            <span className="grid h-6 w-6 place-items-center rounded-full bg-blue-600 text-[11px] font-black text-white">
               {i + 1}
             </span>
             {step}
@@ -53,9 +53,9 @@ function FlowPage() {
           ["Verify via QR", "Scan a QR code at partner cafes, gyms, or event venues to confirm attendance."],
           ["Earn & Level Up", "Gain XP, claim venue perks, unlock badges, and advance your rank."],
         ].map(([t, d]) => (
-          <div key={t} className="glass-card rounded-2xl p-5 border border-white/10 hover:border-cyan-400/40">
-            <p className="font-display text-lg font-bold text-white">{t}</p>
-            <p className="mt-1 text-sm text-slate-400 leading-relaxed">{d}</p>
+          <div key={t} className="glass-card rounded-2xl p-5 border border-slate-200 bg-white shadow-xs hover:border-blue-400">
+            <p className="font-display text-lg font-bold text-slate-900">{t}</p>
+            <p className="mt-1 text-sm text-slate-600 leading-relaxed">{d}</p>
           </div>
         ))}
       </div>
