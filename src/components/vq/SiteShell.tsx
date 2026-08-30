@@ -41,11 +41,11 @@ export function FloatingHeader() {
           ))}
         </nav>
         <Link
-          to="/app"
+          to="/flow"
           className="group relative shrink-0 overflow-hidden rounded-full bg-gradient-brand px-5 py-2.5 text-xs font-bold text-white shadow-md transition-all duration-300 hover:scale-105"
         >
           <span className="relative z-10 flex items-center gap-1.5 font-extrabold uppercase tracking-wide">
-            App Concept
+            How It Works
             <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
           </span>
         </Link>
@@ -57,9 +57,9 @@ export function FloatingHeader() {
 export function MobileBottomNav() {
   const items = [
     { to: "/", label: "Home" },
-    { to: "/app", label: "App" },
-    { to: "/product", label: "Product" },
     { to: "/flow", label: "Flow" },
+    { to: "/product", label: "Product" },
+    { to: "/matching", label: "Matching" },
     { to: "/business", label: "Business" },
   ] as const;
 
@@ -97,8 +97,8 @@ export function SiteFooter() {
             <MapPin className="h-3 w-3" />
             Launch Market: Cyprus
           </span>
-          <Link to="/app" className="text-slate-700 transition-colors hover:text-blue-600">
-            Try App Concept →
+          <Link to="/flow" className="text-slate-700 transition-colors hover:text-blue-600">
+            How It Works →
           </Link>
           <a href="mailto:contact@vibequest.app" className="text-slate-700 transition-colors hover:text-blue-600">
             Contact

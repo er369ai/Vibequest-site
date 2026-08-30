@@ -47,7 +47,7 @@ function Landing() {
         <div className="lg:col-span-7">
           <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-1.5 text-xs font-bold text-blue-700">
             <span className="h-2 w-2 rounded-full bg-blue-600 animate-ping" />
-            CYPRUS OFFLINE COMMUNITY APP
+            CYPRUS REAL-WORLD COMMUNITY
           </div>
 
           <h1 className="mt-6 font-display text-4xl font-black tracking-tight text-slate-900 sm:text-6xl lg:text-7xl">
@@ -63,19 +63,19 @@ function Landing() {
           {/* Action CTAs */}
           <div className="mt-8 flex flex-wrap gap-4">
             <Link
-              to="/app"
+              to="/flow"
               className="group relative overflow-hidden rounded-full bg-gradient-brand px-8 py-4 text-sm font-extrabold text-white shadow-md transition-all hover:scale-105"
             >
               <span className="relative z-10 flex items-center gap-2">
-                Explore App Concept
+                See How It Works
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </span>
             </Link>
             <Link
-              to="/flow"
+              to="/product"
               className="rounded-full border border-slate-200 bg-white px-8 py-4 text-sm font-bold text-slate-800 shadow-xs hover:border-slate-300 hover:bg-slate-50 transition-all"
             >
-              How It Works
+              Explore Product
             </Link>
           </div>
 
