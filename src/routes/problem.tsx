@@ -24,27 +24,30 @@ export const Route = createFileRoute("/problem")({
 });
 
 const PROBLEMS = [
-  "People waste time deciding what to do and default to scrolling.",
-  "Social apps are passive rather than experience-driven.",
-  "Learning a skill alone is hard to sustain.",
-  "Nearby people with the same goals are scattered across platforms.",
-  "Local businesses lack a channel to engaged customers.",
+  "Young adults waste hours deciding what to do and default to infinite feeds.",
+  "Legacy social media platforms promote passive consumption over real-world action.",
+  "Developing a new skill alone is difficult to sustain without social accountability.",
+  "Nearby people with identical goals remain disconnected across fragmented apps.",
+  "Local business owners lack a high-conversion channel for active off-peak foot traffic.",
 ];
 
 function ProblemPage() {
   return (
     <TopicPage
       eyebrow="The problem"
-      title="Hours of scrolling, nothing meaningful."
-      intro="Modern platforms are optimized for passive consumption. People spend hours scrolling and still feel they did nothing meaningful — while self-improvement alone is hard to sustain."
+      title="Hours of scrolling, zero real connection."
+      intro="Modern platforms are engineered for passive consumption. Young adults spend hours scrolling, yet still feel unfulfilled — while self-improvement alone is hard to maintain."
     >
-      <ul className="grid gap-3 md:grid-cols-2">
-        {PROBLEMS.map((p) => (
+      <ul className="grid gap-4 md:grid-cols-2">
+        {PROBLEMS.map((p, idx) => (
           <li
             key={p}
-            className="rounded-2xl border border-border bg-card p-4 text-sm font-medium shadow-soft"
+            className="glass-card rounded-2xl p-6 border border-white/10 text-sm font-medium text-slate-300 hover:border-orange-400/40 hover:shadow-glow-orange flex items-start gap-4"
           >
-            {p}
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-xl bg-orange-500/20 text-xs font-bold text-orange-400">
+              0{idx + 1}
+            </span>
+            <span className="leading-relaxed">{p}</span>
           </li>
         ))}
       </ul>

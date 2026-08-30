@@ -15,24 +15,25 @@ const NAV = [
   { to: "/", label: "Home" },
   { to: "/flow", label: "Flow" },
   { to: "/product", label: "Product" },
+  { to: "/matching", label: "Matching & XP" },
   { to: "/business", label: "Business" },
 ] as const;
 
 export function FloatingHeader() {
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-5">
-      <div className="pointer-events-auto mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-full border border-border/70 bg-background/75 px-4 py-2.5 shadow-lift backdrop-blur-xl">
+    <header className="pointer-events-none fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 sm:pt-6">
+      <div className="pointer-events-auto mx-auto flex max-w-5xl items-center justify-between gap-3 rounded-full border border-white/10 bg-slate-950/70 px-5 py-3 shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-2xl transition-all duration-300 hover:border-cyan-500/30">
         <Link to="/" className="shrink-0">
           <Logo />
         </Link>
-        <nav className="hidden items-center gap-5 text-sm font-semibold text-muted-foreground md:flex">
+        <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-400 md:flex">
           {NAV.map((n) => (
             <Link
               key={n.to}
               to={n.to}
-              activeProps={{ className: "text-foreground" }}
+              activeProps={{ className: "text-white font-bold relative after:absolute after:-bottom-1 after:left-0 after:right-0 after:h-0.5 after:bg-cyan-400 after:rounded-full" }}
               activeOptions={{ exact: true }}
-              className="hover:text-foreground"
+              className="transition-colors hover:text-white"
             >
               {n.label}
             </Link>
@@ -40,9 +41,12 @@ export function FloatingHeader() {
         </nav>
         <Link
           to="/app"
-          className="shrink-0 rounded-full bg-gradient-brand px-4 py-2 text-sm font-bold text-primary-foreground shadow-soft"
+          className="group relative shrink-0 overflow-hidden rounded-full bg-gradient-brand px-5 py-2.5 text-xs font-bold text-slate-950 shadow-glow-cyan transition-all duration-300 hover:scale-105"
         >
-          See the app
+          <span className="relative z-10 flex items-center gap-1.5 font-extrabold uppercase tracking-wide">
+            Interactive Demo
+            <span className="transition-transform duration-300 group-hover:translate-x-0.5">→</span>
+          </span>
         </Link>
       </div>
     </header>
@@ -52,22 +56,22 @@ export function FloatingHeader() {
 export function MobileBottomNav() {
   const items = [
     { to: "/", label: "Home" },
-    { to: "/app", label: "App" },
+    { to: "/app", label: "App Sim" },
     { to: "/product", label: "Product" },
     { to: "/flow", label: "Flow" },
     { to: "/business", label: "Business" },
   ] as const;
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-background/95 backdrop-blur sm:hidden">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-slate-950/90 backdrop-blur-2xl sm:hidden">
       <div className="mx-auto grid max-w-md grid-cols-5">
         {items.map((item) => (
           <Link
             key={item.label}
             to={item.to}
-            activeProps={{ className: "text-primary" }}
+            activeProps={{ className: "text-cyan-400 font-bold" }}
             activeOptions={{ exact: true }}
-            className="flex flex-col items-center justify-center py-3 text-[11px] font-bold text-muted-foreground transition-colors hover:text-foreground"
+            className="flex flex-col items-center justify-center py-3 text-[11px] font-medium text-slate-400 transition-colors hover:text-white"
           >
             {item.label}
           </Link>
@@ -79,18 +83,24 @@ export function MobileBottomNav() {
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border py-10">
-      <div className="mx-auto flex max-w-6xl flex-col items-start gap-4 px-5 sm:flex-row sm:items-center sm:justify-between">
-        <Logo />
-        <p className="text-sm text-muted-foreground">
-          Not another social app. A reason to go outside.
-        </p>
-        <div className="flex flex-wrap items-center gap-4 text-sm font-bold">
-          <Link to="/app" className="text-primary">
-            View app mockup →
+    <footer className="relative border-t border-white/10 bg-slate-950/80 py-12">
+      <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-6 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <Logo />
+          <p className="mt-2 text-sm text-slate-400">
+            Not another social app. A reason to go outside & experience life.
+          </p>
+        </div>
+        <div className="flex flex-wrap items-center gap-4 text-xs font-semibold">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-cyan-400">
+            <span className="h-2 w-2 rounded-full bg-cyan-400 animate-ping" />
+            Launch Market: Cyprus 🇨🇾
+          </span>
+          <Link to="/app" className="text-slate-300 transition-colors hover:text-cyan-400">
+            Try App Simulator →
           </Link>
-          <a href="mailto:investors@vibequest.app" className="text-primary">
-            Investors — contact us
+          <a href="mailto:investors@vibequest.app" className="text-slate-300 transition-colors hover:text-orange-400">
+            Investors — Contact
           </a>
         </div>
       </div>
@@ -106,9 +116,14 @@ export function SiteShell({
   className?: string;
 }) {
   return (
-    <div className={`min-h-screen bg-background pb-20 sm:pb-0 ${className}`}>
+    <div className={`relative min-h-screen bg-[#0B0F17] text-slate-100 pb-20 sm:pb-0 ${className}`}>
+      {/* Ambient background glowing light orbs */}
+      <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[120px] animate-pulse-slow" />
+      <div className="pointer-events-none absolute right-0 top-[800px] -z-10 h-[500px] w-[500px] rounded-full bg-orange-500/10 blur-[120px]" />
+      <div className="pointer-events-none absolute left-0 top-[1600px] -z-10 h-[600px] w-[600px] rounded-full bg-violet-600/10 blur-[140px]" />
+
       <FloatingHeader />
-      <div className="pt-24 sm:pt-28">{children}</div>
+      <div className="pt-24 sm:pt-32">{children}</div>
       <SiteFooter />
       <MobileBottomNav />
     </div>
@@ -128,12 +143,12 @@ export function TopicPage({
 }) {
   return (
     <SiteShell>
-      <main className="mx-auto max-w-6xl px-5 py-8 sm:py-12">
+      <main className="mx-auto max-w-6xl px-6 py-8 sm:py-12">
         {eyebrow ? (
-          <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">{eyebrow}</p>
+          <p className="text-xs font-bold uppercase tracking-[0.25em] text-cyan-400">{eyebrow}</p>
         ) : null}
-        <h1 className="mt-3 text-3xl font-extrabold leading-tight sm:text-5xl">{title}</h1>
-        {intro ? <p className="mt-4 max-w-2xl text-muted-foreground">{intro}</p> : null}
+        <h1 className="mt-3 font-display text-4xl font-extrabold tracking-tight text-white sm:text-6xl">{title}</h1>
+        {intro ? <p className="mt-4 max-w-2xl text-lg text-slate-400">{intro}</p> : null}
         <div className="mt-10">{children}</div>
         <TopicNavGrid />
       </main>
@@ -143,19 +158,20 @@ export function TopicPage({
 
 export function TopicNavGrid() {
   return (
-    <section className="mt-16 border-t border-border pt-8">
-      <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
-        Explore more
+    <section className="mt-20 border-t border-white/10 pt-10">
+      <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400">
+        Explore Vibe Quest Blueprint
       </h2>
-      <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {TOPICS.map((t) => (
           <Link
             key={t.to}
             to={t.to}
-            className="rounded-2xl border border-border bg-card p-4 shadow-soft transition-colors hover:border-primary"
+            className="group glass-card rounded-2xl p-5 hover:border-cyan-500/40 hover:shadow-glow-cyan"
           >
-            <p className="font-bold">{t.label}</p>
-            <p className="mt-1 text-xs text-muted-foreground">{t.blurb}</p>
+            <p className="font-display font-bold text-white transition-colors group-hover:text-cyan-400">{t.label}</p>
+            <p className="mt-1 text-xs text-slate-400">{t.blurb}</p>
+            <span className="mt-3 inline-block text-xs font-bold text-cyan-400 transition-transform group-hover:translate-x-1">Explore →</span>
           </Link>
         ))}
       </div>

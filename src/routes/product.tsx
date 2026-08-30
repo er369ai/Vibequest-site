@@ -25,35 +25,44 @@ export const Route = createFileRoute("/product")({
 const LAYERS = [
   {
     name: "Vibe Quest Free",
-    tag: "Social layer",
+    tag: "Social Layer",
+    border: "hover:border-cyan-400/50 hover:shadow-glow-cyan",
+    accent: "text-cyan-400",
+    dot: "bg-cyan-400",
     points: [
       "Email & Google auth",
       "Personalized social quests",
       "Chill and High-Energy vibe modes",
-      "Groups and basic matching",
-      "XP, levels and badges",
+      "Group outings & basic matching",
+      "XP leveling, badges & streaks",
     ],
   },
   {
     name: "Vibe Quest Pro",
-    tag: "Growth layer",
+    tag: "Growth Layer",
+    border: "hover:border-purple-400/50 hover:shadow-glow-orange",
+    accent: "text-purple-400",
+    dot: "bg-purple-400",
     points: [
-      "Multiple skill goals",
+      "Multiple skill mastery trees",
       "Skill-specific quest generation",
-      "Same-level, higher-level and mentor matching",
-      "Realistic learning plans and time blocks",
-      "Weekly growth reports & higher XP multipliers",
+      "Peer, guide & mentor matching",
+      "Learning plans & calendar blocks",
+      "Weekly progress reports & 2× XP",
     ],
   },
   {
     name: "Vibe Quest Partners",
-    tag: "Commerce layer",
+    tag: "Commerce Layer",
+    border: "hover:border-amber-400/50 hover:shadow-glow-gold",
+    accent: "text-amber-400",
+    dot: "bg-amber-400",
     points: [
-      "Partner quests and sponsored experiences",
-      "QR-based visit verification",
-      "Rewards, discounts and loyalty",
-      "Event discovery and participation",
-      "Campaign analytics and reporting",
+      "Partner quests & sponsored experiences",
+      "QR-based attendance verification",
+      "Custom reward vouchers & perks",
+      "Event discovery & ticket redemption",
+      "Campaign analytics dashboard",
     ],
   },
 ];
@@ -63,21 +72,21 @@ function ProductPage() {
     <TopicPage
       eyebrow="Product"
       title="Three layers, one ecosystem."
-      intro="Free, Pro and Partners work together to turn everyday moments into real-world experiences — and local businesses into active participants."
+      intro="Free, Pro, and Partners work together seamlessly to turn everyday moments into real-world experiences — and local venue owners into active participants."
     >
-      <div className="grid gap-5 md:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-3">
         {LAYERS.map((l) => (
           <div
             key={l.name}
-            className="rounded-3xl bg-gradient-deep p-6 text-ink-foreground shadow-lift"
+            className={`glass-card rounded-3xl p-6 border border-white/10 transition-all ${l.border}`}
           >
-            <p className="text-[10px] font-bold uppercase tracking-widest text-gold">{l.tag}</p>
-            <h2 className="mt-2 text-xl font-bold text-ink-foreground">{l.name}</h2>
-            <ul className="mt-4 space-y-2 text-sm opacity-85">
+            <p className={`text-[10px] font-bold uppercase tracking-widest ${l.accent}`}>{l.tag}</p>
+            <h2 className="mt-2 font-display text-2xl font-bold text-white">{l.name}</h2>
+            <ul className="mt-6 space-y-3 text-sm text-slate-300">
               {l.points.map((p) => (
-                <li key={p} className="flex gap-2">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
-                  {p}
+                <li key={p} className="flex items-start gap-2.5">
+                  <span className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${l.dot}`} />
+                  <span className="leading-snug">{p}</span>
                 </li>
               ))}
             </ul>

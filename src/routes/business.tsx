@@ -27,51 +27,47 @@ function BusinessPage() {
     <TopicPage
       eyebrow="Business model"
       title="Local commerce, verified by QR."
-      intro="Each user carries a personal QR identity. At participating venues and events, a scan verifies attendance, quest completion or a reward interaction."
+      intro="Each user carries a personal QR identity. At participating venues and events in Cyprus, a scan verifies attendance, quest completion, or reward redemptions."
     >
       <div className="grid gap-10 lg:grid-cols-2">
         <div>
-          <h2 className="text-xl font-bold">Who gains what</h2>
-          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+          <h2 className="font-display text-xl font-bold text-white">Who Gains What</h2>
+          <div className="mt-6 grid gap-4 sm:grid-cols-3">
             {[
-              ["Users", "XP, rewards, badges, discounts and memorable experiences."],
-              ["Businesses", "Qualified foot traffic, campaigns and venue experiences."],
-              ["Vibe Quest", "Subscriptions, event fees and partner campaigns."],
+              ["Users", "XP, badges, real discounts & memorable experiences."],
+              ["Businesses", "Qualified off-peak foot traffic, repeat customers & brand lift."],
+              ["Vibe Quest", "Pro subscriptions, partner campaign fees & marketplace cut."],
             ].map(([t, d]) => (
-              <div key={t} className="rounded-2xl border border-border bg-card p-4">
-                <p className="font-bold text-primary">{t}</p>
-                <p className="mt-1 text-xs text-muted-foreground">{d}</p>
+              <div key={t} className="glass-card rounded-2xl p-4 border border-white/10">
+                <p className="font-display font-bold text-cyan-400">{t}</p>
+                <p className="mt-1 text-xs text-slate-400 leading-relaxed">{d}</p>
               </div>
             ))}
           </div>
-          <p className="mt-5 rounded-2xl bg-gold/20 p-4 text-sm font-semibold text-gold-foreground">
-            Privacy principle — QR participation is designed around consent and purpose-specific
-            verification, with careful limits on personal data exposure.
-          </p>
+          <div className="mt-6 rounded-2xl border border-amber-400/30 bg-amber-500/10 p-5 text-sm font-semibold text-amber-300">
+            🛡️ <strong className="text-white">Privacy Principle</strong> — QR participation is built on zero-knowledge consent and purpose-specific verification without exposing personal phone numbers or sensitive user data.
+          </div>
         </div>
+
         <div>
-          <h2 className="text-xl font-bold">Revenue streams</h2>
+          <h2 className="font-display text-xl font-bold text-white">Diversified Revenue Streams</h2>
           <ul className="mt-6 space-y-3 text-sm">
             {[
-              ["Vibe Quest Pro", "Monthly and annual subscriptions."],
-              ["Events", "Booking or participation fees."],
-              ["Partner campaigns", "Sponsored quests and promotions."],
-              ["Local commerce", "Fees or commissions on experiences."],
-              ["Workshops & mentors", "Marketplace commissions."],
-              ["Brand partnerships", "Sponsored experiences and skill events."],
+              ["Vibe Quest Pro", "Monthly & annual premium member perks."],
+              ["Partner Campaigns", "Sponsored quests & venue foot-traffic campaigns."],
+              ["QR Local Commerce", "Commissions on verified venue reward vouchers."],
+              ["Workshops & Mentors", "Marketplace commission on paid skill sessions."],
+              ["Brand Partnerships", "Co-sponsored real-world experience events."],
             ].map(([t, d]) => (
               <li
                 key={t}
-                className="flex justify-between gap-4 rounded-2xl border border-border bg-card px-4 py-3"
+                className="flex items-center justify-between gap-4 glass-card rounded-2xl p-4 border border-white/10"
               >
-                <span className="font-bold">{t}</span>
-                <span className="text-right text-muted-foreground">{d}</span>
+                <span className="font-bold text-white">{t}</span>
+                <span className="text-right text-xs font-semibold text-cyan-400">{d}</span>
               </li>
             ))}
           </ul>
-          <p className="mt-4 text-sm text-muted-foreground">
-            Intentionally diversified so revenue does not depend exclusively on subscriptions.
-          </p>
         </div>
       </div>
     </TopicPage>
