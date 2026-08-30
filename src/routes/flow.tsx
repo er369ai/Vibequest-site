@@ -1,7 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { TopicPage } from "@/components/vq/SiteShell";
-import { PhoneFrame } from "@/components/vq/PhoneFrame";
-import { DiscoverScreen, ProgressScreen } from "@/components/vq/screens";
 
 export const Route = createFileRoute("/flow")({
   head: () => ({
@@ -10,7 +8,7 @@ export const Route = createFileRoute("/flow")({
       {
         name: "description",
         content:
-          "Vibe Quest's core flow: discover quests, join, meet up, do it in the real world, verify, earn XP and progress.",
+          "Vibe Quest's core flow: discover quests, join, meet up, do it in the real world, verify at a venue, and earn XP.",
       },
       { property: "og:title", content: "The Vibe Quest Core Flow" },
       {
@@ -47,29 +45,19 @@ function FlowPage() {
         ))}
       </ol>
 
-      <div className="mt-12 grid items-center gap-10 lg:grid-cols-12">
-        <div className="flex justify-center gap-6 lg:col-span-6">
-          <PhoneFrame label="1. Discover Quests">
-            <DiscoverScreen />
-          </PhoneFrame>
-          <PhoneFrame label="2. Level Up Profile" className="hidden sm:flex">
-            <ProgressScreen />
-          </PhoneFrame>
-        </div>
-        <div className="space-y-4 lg:col-span-6">
-          {[
-            ["Discover", "Browse curated quests based on location radius, vibe preferences, and skill goals."],
-            ["Join & Match", "Find peer partners, group outings, or mentor guides nearby."],
-            ["Meet & Do", "Step away from the screen and complete the experience together in the real world."],
-            ["Verify via QR", "Scan instant partner QR codes at local cafes, climbing gyms, or event venues."],
-            ["Earn & Level Up", "Gain XP, claim free drinks or discounts, unlock badges, and advance your rank."],
-          ].map(([t, d]) => (
-            <div key={t} className="glass-card rounded-2xl p-5 border border-white/10 hover:border-cyan-400/40">
-              <p className="font-display text-lg font-bold text-white">{t}</p>
-              <p className="mt-1 text-sm text-slate-400 leading-relaxed">{d}</p>
-            </div>
-          ))}
-        </div>
+      <div className="mt-12 space-y-4 max-w-2xl">
+        {[
+          ["Discover", "Browse quests based on your location, vibe preference, and skill interests."],
+          ["Join & Match", "Find peer partners, group outings, or mentor guides nearby."],
+          ["Meet & Do", "Step away from the screen and complete the activity together in the real world."],
+          ["Verify via QR", "Scan a QR code at partner cafes, gyms, or event venues to confirm attendance."],
+          ["Earn & Level Up", "Gain XP, claim venue perks, unlock badges, and advance your rank."],
+        ].map(([t, d]) => (
+          <div key={t} className="glass-card rounded-2xl p-5 border border-white/10 hover:border-cyan-400/40">
+            <p className="font-display text-lg font-bold text-white">{t}</p>
+            <p className="mt-1 text-sm text-slate-400 leading-relaxed">{d}</p>
+          </div>
+        ))}
       </div>
     </TopicPage>
   );

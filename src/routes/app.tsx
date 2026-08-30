@@ -7,22 +7,23 @@ import {
   ProgressScreen,
   QrScreen,
   QuestDetailScreen,
+  RadarScreen,
 } from "@/components/vq/screens";
 
 export const Route = createFileRoute("/app")({
   head: () => ({
     meta: [
-      { title: "Vibe Quest App Mockup — Quests, Matching, XP & QR" },
+      { title: "Vibe Quest App — Concept Screens" },
       {
         name: "description",
         content:
-          "Interactive mockup of the Vibe Quest mobile app: quest discovery, skill matching, partner QR verification and XP progression screens.",
+          "Concept screens showing the planned Vibe Quest mobile app: quest discovery, map radar, skill matching, QR verification, and progression.",
       },
-      { property: "og:title", content: "Vibe Quest App Mockup" },
+      { property: "og:title", content: "Vibe Quest App Concept" },
       {
         property: "og:description",
         content:
-          "Five screens showing the Vibe Quest core flow: discover, join, verify with QR, earn XP and progress.",
+          "Concept screens for Vibe Quest: discover quests, find practice partners, verify at venues, and track progress.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -33,28 +34,33 @@ export const Route = createFileRoute("/app")({
 
 const SCREENS = [
   {
-    label: "1. Discover Feed",
-    note: "Location-aware Cyprus quests categorized by vibe.",
+    label: "Quest Discovery",
+    note: "Browse available quests by category and vibe.",
     node: <DiscoverScreen />,
   },
   {
-    label: "2. Quest Detail",
-    note: "Join, see participants, preview XP rewards.",
+    label: "Quest Map",
+    note: "Find active group quests nearby on an interactive map.",
+    node: <RadarScreen />,
+  },
+  {
+    label: "Quest Detail",
+    note: "View quest info and join.",
     node: <QuestDetailScreen />,
   },
   {
-    label: "3. Skill Matching Engine",
-    note: "Peer, guide, and certified mentor matching.",
+    label: "Skill Matching",
+    note: "Find a practice partner at your level.",
     node: <MatchScreen />,
   },
   {
-    label: "4. Partner QR Scan",
-    note: "Zero-knowledge verification at local venues.",
+    label: "QR Verification",
+    note: "Verify attendance at partner venues.",
     node: <QrScreen />,
   },
   {
-    label: "5. Profile & XP Tree",
-    note: "Levels, streaks, skill mastery trees & badges.",
+    label: "Profile & Progress",
+    note: "Track quests, streaks, badges, and skill progress.",
     node: <ProgressScreen />,
   },
 ];
@@ -63,13 +69,12 @@ function AppMockup() {
   return (
     <SiteShell>
       <main className="mx-auto max-w-7xl px-6 py-8">
-        <p className="text-xs font-bold uppercase tracking-[0.25em] text-cyan-400">Interactive App Walkthrough</p>
+        <p className="text-xs font-bold uppercase tracking-[0.25em] text-cyan-400">App Concept Screens</p>
         <h1 className="mt-3 max-w-3xl font-display text-4xl font-extrabold text-white sm:text-6xl">
-          The core flow, screen by screen.
+          The planned app experience.
         </h1>
         <p className="mt-4 max-w-2xl text-slate-400">
-          Discover → Join → Meet → Do → Verify → Earn → Progress. Five key surfaces of the Vibe Quest
-          mobile app, from social discovery through Pro skill matching to partner QR verification.
+          These screens illustrate the planned Vibe Quest mobile app flow: discover quests, find practice partners, verify at venues, and track your real-world progress.
         </p>
 
         <div className="mt-12 flex flex-wrap justify-center gap-x-8 gap-y-12">
