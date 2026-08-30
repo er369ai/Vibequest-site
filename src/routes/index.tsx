@@ -183,8 +183,8 @@ function Landing() {
           </div>
 
           {/* Feature 2 */}
-          <div className="glass-card group rounded-3xl p-8 md:col-span-6 hover:border-amber-400/50 hover:shadow-glow-gold">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-500/20 text-amber-400">
+          <div className="glass-card group rounded-3xl p-8 md:col-span-6 hover:border-cyan-400/50 hover:shadow-glow-cyan">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
               <Coffee className="h-6 w-6" />
             </div>
             <h3 className="mt-6 font-display text-2xl font-bold text-white">
@@ -196,8 +196,8 @@ function Landing() {
           </div>
 
           {/* Feature 3 */}
-          <div className="glass-card group rounded-3xl p-8 md:col-span-6 hover:border-purple-400/50">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-purple-500/20 text-purple-400">
+          <div className="glass-card group rounded-3xl p-8 md:col-span-6 hover:border-cyan-400/50 hover:shadow-glow-cyan">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
               <Sparkles className="h-6 w-6" />
             </div>
             <h3 className="mt-6 font-display text-2xl font-bold text-white">
@@ -209,8 +209,8 @@ function Landing() {
           </div>
 
           {/* Feature 4 */}
-          <div className="glass-card group rounded-3xl p-8 md:col-span-6 hover:border-orange-400/50 hover:shadow-glow-orange">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-orange-500/20 text-orange-400">
+          <div className="glass-card group rounded-3xl p-8 md:col-span-6 hover:border-cyan-400/50 hover:shadow-glow-cyan">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
               <Sprout className="h-6 w-6" />
             </div>
             <h3 className="mt-6 font-display text-2xl font-bold text-white">

@@ -117,11 +117,10 @@ export function SiteShell({
   className?: string;
 }) {
   return (
-    <div className={`relative min-h-screen bg-[#0B0F17] text-slate-100 pb-20 sm:pb-0 ${className}`}>
-      {/* Ambient background glowing light orbs */}
-      <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[120px] animate-pulse-slow" />
-      <div className="pointer-events-none absolute right-0 top-[800px] -z-10 h-[500px] w-[500px] rounded-full bg-orange-500/10 blur-[120px]" />
-      <div className="pointer-events-none absolute left-0 top-[1600px] -z-10 h-[600px] w-[600px] rounded-full bg-violet-600/10 blur-[140px]" />
+    <div className={`relative min-h-screen bg-[#080B10] text-slate-100 pb-20 sm:pb-0 ${className}`}>
+      {/* Ambient background stealth lights */}
+      <div className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-blue-600/5 blur-[140px]" />
+      <div className="pointer-events-none absolute right-0 top-[800px] -z-10 h-[500px] w-[500px] rounded-full bg-cyan-600/5 blur-[140px]" />
 
       <FloatingHeader />
       <div className="pt-24 sm:pt-32">{children}</div>
