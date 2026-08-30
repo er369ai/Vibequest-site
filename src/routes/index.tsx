@@ -44,11 +44,6 @@ export const Route = createFileRoute("/")({
 });
 
 function Landing() {
-  // Business ROI Calculator State
-  const [visitors, setVisitors] = useState<number>(150);
-  const [ticketSize, setTicketSize] = useState<number>(12);
-  const projectedRevenue = Math.round(visitors * ticketSize * 0.85);
-
   return (
     <SiteShell>
       {/* HERO SECTION */}
@@ -305,80 +300,6 @@ function Landing() {
                 <p className="font-display text-3xl font-extrabold text-cyan-400">4.2x</p>
                 <p className="text-xs text-slate-400">Real Meetups / Month</p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* B2B BUSINESS PARTNER CALCULATOR */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-slate-900 via-slate-950 to-[#0B0F17] p-8 shadow-glow-cyan md:p-12">
-          <div className="grid gap-8 lg:grid-cols-12 items-center">
-            <div className="lg:col-span-6">
-              <span className="rounded-full border border-cyan-500/40 bg-cyan-500/10 px-3.5 py-1 text-xs font-bold text-cyan-400">
-                LOCAL BUSINESS PARTNERS
-              </span>
-              <h2 className="mt-4 font-display text-3xl font-black text-white sm:text-4xl">
-                Partner with Vibe Quest Cyprus
-              </h2>
-              <p className="mt-3 text-slate-400 leading-relaxed">
-                Bring high-intent young adults straight to your cafe, gym, or venue during off-peak hours with verified QR quest redemptions.
-              </p>
-
-              {/* Slider Controls */}
-              <div className="mt-8 space-y-6">
-                <div>
-                  <div className="flex justify-between text-sm font-bold text-slate-300">
-                    <span>Monthly Quest Visitors</span>
-                    <span className="text-cyan-400 font-display text-base">{visitors} visitors</span>
-                  </div>
-                  <input
-                    type="range"
-                    min="30"
-                    max="500"
-                    step="10"
-                    value={visitors}
-                    onChange={(e) => setVisitors(Number(e.target.value))}
-                    className="mt-2 w-full accent-cyan-400"
-                  />
-                </div>
-
-                <div>
-                  <div className="flex justify-between text-sm font-bold text-slate-300">
-                    <span>Average Order Value</span>
-                    <span className="text-cyan-400 font-display text-base">€{ticketSize}</span>
-                  </div>
-                  <input
-                    type="range"
-                    min="5"
-                    max="40"
-                    step="1"
-                    value={ticketSize}
-                    onChange={(e) => setTicketSize(Number(e.target.value))}
-                    className="mt-2 w-full accent-cyan-400"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Calculated ROI Box */}
-            <div className="glass-card rounded-2xl p-8 border border-white/20 text-center lg:col-span-6 shadow-2xl">
-              <p className="text-xs font-bold uppercase tracking-widest text-slate-400">
-                Projected Extra Monthly Revenue
-              </p>
-              <p className="mt-4 font-display text-5xl font-black text-gradient-brand sm:text-6xl">
-                +€{projectedRevenue.toLocaleString()}
-              </p>
-              <p className="mt-2 text-xs text-slate-400">
-                Based on 85% average QR voucher redemption & repeat visit rate.
-              </p>
-
-              <Link
-                to="/business"
-                className="mt-8 inline-block w-full rounded-full bg-gradient-brand py-3.5 text-xs font-black text-slate-950 shadow-glow-cyan transition-transform hover:scale-105"
-              >
-                Become a Cyprus Venue Partner →
-              </Link>
             </div>
           </div>
         </div>
